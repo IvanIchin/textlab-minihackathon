@@ -36,13 +36,14 @@ def build_classifier(clf_name: str, params: dict):
 
 def run_experiment(df, text_col, label_col, feat_cfg, clf_name, clf_params, test_size=0.2, cv_folds=0):
     """Ejecuta el pipeline completo sin fuga de datos."""
-    X = df[text_col].values
-    y = df[label_col].values
+    # Convertir explícitamente a arreglos puros de NumPy para evitar el error de PyArrow
+    X = np.asarray(df[text_col].tolist(), dtype=object)
+    y = np.asarray(df[label_col].tolist(), dtype=object)
 
     X_train, X_test, y_train, y_test = train_test_split(
         X, y, test_size=test_size, stratify=y, random_state=42
     )
-
+    
     extractor = TextFeatureExtractor(
         feature_type=feat_cfg["feature_type"],
         ngram_size=feat_cfg["ngram_size"],
