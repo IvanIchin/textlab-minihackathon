@@ -16,49 +16,6 @@ Plataforma web para configurar, ejecutar y evaluar experimentos de clasificació
 - Evaluación mediante accuracy, precision macro, recall macro, F1 macro, matriz de confusión y gráficas por clase y validación cruzada.
 - Historial de experimentos durante la sesión y predicción de textos individuales o CSV sin etiquetar, con descarga de predicciones.
 
-## Dependencias
-
-Python y las librerías indicadas en `requirements.txt`:
-
-| Librería | Versión mínima |
-|---|---|
-| Streamlit | 1.35.0 |
-| Pandas | 2.0.0 |
-| NumPy | 1.24.0 |
-| Scikit-learn | 1.4.0 |
-| Plotly | 5.20.0 |
-| NLTK | 3.8.1 |
-
-La primera ejecución puede requerir acceso a internet para descargar los recursos de NLTK. Se recomienda utilizar un entorno virtual de Python.
-
-## Instalación y ejecución
-
-```bash
-git clone https://github.com/IvanIchin/textlab-minihackathon.git
-cd textlab-minihackathon
-python -m venv .venv
-```
-
-Activar el entorno en Windows PowerShell:
-
-```powershell
-.venv\Scripts\Activate.ps1
-```
-
-En Linux o macOS:
-
-```bash
-source .venv/bin/activate
-```
-
-Instalar y ejecutar:
-
-```bash
-python -m pip install -r requirements.txt
-python -m streamlit run app.py
-```
-
-Abrir la URL local indicada por Streamlit (habitualmente `http://localhost:8501`).
 
 ## Uso de TextLab
 
