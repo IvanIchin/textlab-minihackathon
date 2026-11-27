@@ -30,10 +30,6 @@ Plataforma web para configurar, ejecutar y evaluar experimentos de clasificació
 
 La división train/test es estratificada. El extractor de características y el clasificador forman un `Pipeline` de Scikit-learn. La validación cruzada, cuando se activa, opera exclusivamente sobre el conjunto de entrenamiento; el vectorizador se ajusta en cada fold de entrenamiento. El pipeline final se ajusta sobre train y evalúa sobre test.
 
-## Dataset de desarrollo
-
-[Multilingual Financial Sentiment](https://huggingface.co/datasets/Kenpache/multilingual-financial-sentiment). Para el reto se deben seleccionar externamente las filas con `language == "es"` y cargar el CSV resultante, eligiendo `sentence` como texto y `label` como etiqueta. TextLab no depende de las etiquetas específicas de este dataset.
-
 ## Estructura
 
 ```text
